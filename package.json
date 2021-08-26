@@ -1,0 +1,39 @@
+{
+  "name": "example",
+  "version": "4.4.1",
+  "description": "example",
+  "license": "MIT",
+  "main": "app/index.js",
+  "repository": "example",
+  "author": {
+    "name": "Syed Rahat Murtaza",
+    "email": "rahat_murtaza@outlook.com",
+    "url": "https://github.com/rahatmurtaza"
+  },
+  "scripts": {
+    "clean": "rimraf lib && rimraf coverage",
+    "format": "prettier --write \"{src,__tests__}/**/*.ts\" --single-quote --trailing-comma es5",
+    "lint": "tslint --force --format verbose \"src/**/*.ts\"",
+    "prepublishOnly": "npm run build",
+    "prebuild": "npm run clean && npm run format && npm run lint && echo Using TypeScript && tsc --version",
+    "build": "tsc --pretty",
+    "test": "jest",
+    "coverage": "jest --coverage",
+    "watch": "npm run build -- --watch",
+    "watch:test": "jest --watch"
+  },
+  "files": [
+    "example"
+  ],
+  "keywords": [
+    "example"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "eslint": "^5.10.0"
+  },
+  "preferGlobal": true,
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  }
+}
